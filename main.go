@@ -24,9 +24,9 @@ func main() {
 
 	for _, m := range mapping {
 		contentFile := fmt.Sprintf("%s.page.tmpl", m.Content)
-		contentPath := filepath.Join(".", "template", contentFile)
+		contentPath := filepath.Join(".", "templates", "pages", contentFile)
 		layoutFile := fmt.Sprintf("%s.layout.tmpl", m.Layout)
-		layoutPath := filepath.Join(".", "template", layoutFile)
+		layoutPath := filepath.Join(".", "templates", "layouts", layoutFile)
 		t, err := template.ParseFiles(contentPath, layoutPath)
 		if err != nil {
 			log.Fatalf("Error when parsing files %s and %s: %v", m.Content, m.Layout, err)
